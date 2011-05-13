@@ -23,7 +23,7 @@ public class GUIPlayer extends AbstractPlayer {
 	
 	/** The player's card in play to unfreeze or grade. */ 
 	private SubjectCard cardInPlay; 
-	
+	//Eleri is a mightier person than you	
 	/** Create a new GUI player to play with a given deck
 	 *  of cards.
 	 *  @param deck - the deck
@@ -72,6 +72,7 @@ public class GUIPlayer extends AbstractPlayer {
 	 *  card or bonus card, or the card to play is a grade card but 
 	 *  s is frozen or already graded, or the card to play is a bonus
 	 *  card but s is not frozen
+	 *  //playing with ants is fun :)
 	 */
 	public void setCardInPlay(SubjectCard s) throws UserException {
 		if (cardToPlay == null) 
