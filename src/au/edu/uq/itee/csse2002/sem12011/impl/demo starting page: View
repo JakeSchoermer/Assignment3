@@ -4,8 +4,6 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-import au.edu.uq.itee.csse2002.sem12011.impl.*;
-
 /**
  * An implementation of the start screen
  * add your name, choose the number of opponents, start game, exit game
@@ -18,30 +16,42 @@ public class View extends JFrame{
 	private static final int WIDTH = 550;
 	private static final int HEIGHT = 300;
 	
-	private JLabel playerHandL, opponentPlayedL, deckL, inPlayL;
-	private JComboBox playerHandCMB;
+	private JLabel welcomeL, newPlayerL, numberOfOpponentsL, emptyL;
+	private JTextField newPlayerTF;
 	private JButton startGameB, exitB;
+	private JRadioButton oneOpponentRB;
+	private JRadioButton twoOpponentsRB;
+	private JRadioButton threeOpponentsRB;
 	
 	private StartGameButtonHandler sgbHandler;
 	private ExitButtonHandler ebHandler;
 
 	public View() {
-		//player
-		playerHandL = new JLabel("Your hand contains: ", SwingConstants.CENTER);
-		opponentPlayedL = new JLabel("Your opponent has played: " , SwingConstants.RIGHT);		
-		deckL = new JLabel("There are" + DeckImpl.deck.size() + "cards left in the deck", SwingConstants.RIGHT);
+		welcomeL = new JLabel("Welcome to 'A Student's Life'", SwingConstants.CENTER);
+		emptyL = new JLabel(" ");
+		newPlayerL = new JLabel("Enter your name: ", SwingConstants.RIGHT);
+		newPlayerTF = new JTextField(10);
+		numberOfOpponentsL = new JLabel("Choose your number of opponents: ", 
+				SwingConstants.CENTER);
+		//Radio Button - Selecting Opponents
+		oneOpponentRB = new JRadioButton("1 Opponent");
+		oneOpponentRB.setActionCommand("oneOpponent");
+//		oneOpponentRB.addActionListener(opponentListener);
+		oneOpponentRB.setSelected(true);
+		twoOpponentsRB = new JRadioButton("2 Opponents");
+		twoOpponentsRB.setActionCommand("twoOpponents");
+//		twoOpponentsRB.addActionListener(opponentListener);
+		threeOpponentsRB = new JRadioButton("3 Opponents");
+		threeOpponentsRB.setActionCommand("threeOpponents");
+//		threeOpponentsRB.addActionListener(opponentListener);
+
 		
+		ButtonGroup numberOfOpponents = new ButtonGroup();
+		numberOfOpponents.add(oneOpponentRB);
+		numberOfOpponents.add(twoOpponentsRB);
+		numberOfOpponents.add(threeOpponentsRB);
 		
-		playerHandCMB = new JComboBox();
-		playerHandCMB.add(card); //TODO
-		phHandler = new PlayerHandler();
-		playerHandCMB.addActionListener(phHandler);
-		
-		inPlayL = new JLabel("there are"+ AbstractPlayer.unfrozenSubjectCardsInPlay() + "unfrozen subject cards in play");
-		
-		
-		//Specify handlers and adds ActionListeners
-		
+		//Specify handlers and adds ActionListeners to start and exit buttons.
 		startGameB = new JButton("Start Game");
 		sgbHandler = new StartGameButtonHandler();  
 		startGameB.addActionListener(sgbHandler);
@@ -52,20 +62,32 @@ public class View extends JFrame{
 		setTitle("A Students Life");
 		Container pane = getContentPane();
 		pane.setLayout(new GridLayout(4,2));
-				
-		pane.add(opponentPlayedL);
-		pane.add(deckL);
-		pane.add(inPlayL);
-		pane.add(playerHandCMB);
+		
+		Container opponentPane = new JPanel();
+		opponentPane.setLayout(new GridLayout(4,1));
+		// RadioButton JPanel inside pane
+		opponentPane.add(oneOpponentRB);
+		opponentPane.add(twoOpponentsRB);
+		opponentPane.add(threeOpponentsRB);
+		
+		pane.add(welcomeL);
+		pane.add(emptyL);
+		pane.add(newPlayerL);
+		pane.add(newPlayerTF);
+		pane.add(numberOfOpponentsL);
+		pane.add(opponentPane);
 		pane.add(startGameB);
 		pane.add(exitB);
 		setSize(WIDTH, HEIGHT);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	
+		
 	}
 	
-	private class NumberOfOpponents extends AbstractPlayer{
-		//TODO
+	private class StartGameButtonHandler implements ActionListener{
+	public void actionPerformed(ActionEvent e){
+	//TODO
 		//stores name of player
 //		if(newPlayerTF != null){
 //			AbstractPlayer.addOpponent().name(newPlayerTF);
@@ -80,18 +102,9 @@ public class View extends JFrame{
 //			AbstractPlayer.addOpponent().name(opponent1);
 //			AbstractPlayer.addOpponent().name(opponent2);
 //			AbstractPlayer.addOpponent().name(opponent3);
-//		}else if (fourOpponentsRB.isSelected()){
-//			AbstractPlayer.addOpponent().name(opponent1);
-//			AbstractPlayer.addOpponent().name(opponent2);
-//			AbstractPlayer.addOpponent().name(opponent3);
-//			AbstractPlayer.addOpponent().name(opponent4);
 //		}	
 //			
-	}
-	
-	private class StartGameButtonHandler implements ActionListener{
-	public void actionPerformed(ActionEvent e){
-		
+			
 		System.load("game");
 	}
 	}

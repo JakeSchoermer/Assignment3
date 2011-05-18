@@ -22,8 +22,7 @@ public class GUIPlayer extends AbstractPlayer {
 	private SubjectCard cardToFreeze; 
 	
 	/** The player's card in play to unfreeze or grade. */ 
-	private SubjectCard cardInPlay; 
-	//Eleri is a mightier person than you	
+	private SubjectCard cardInPlay; 	
 	/** Create a new GUI player to play with a given deck
 	 *  of cards.
 	 *  @param deck - the deck
