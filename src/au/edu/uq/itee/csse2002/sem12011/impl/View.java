@@ -12,6 +12,14 @@ import au.edu.uq.itee.csse2002.sem12011.impl.*;
  * 
  * @author itz_eleri
  *
+ *View Pane
+	 * 	view hand
+	 * 	view subjects cards in play (own and opponents)
+	 * 		when action done on subject card, player only sees subject status
+	 * 
+	 * 	play card from hand
+	 * 		select card to play and select subject card to play on
+	 * 		select "start round"
  */
 
 public class View extends JFrame{
@@ -29,16 +37,16 @@ public class View extends JFrame{
 		//player
 		playerHandL = new JLabel("Your hand contains: ", SwingConstants.CENTER);
 		opponentPlayedL = new JLabel("Your opponent has played: " , SwingConstants.RIGHT);		
-		deckL = new JLabel("There are" + DeckImpl.deck.size() + "cards left in the deck", SwingConstants.RIGHT);
+		deckL = new JLabel("There are" + DeckImpl.this.size() + "cards left in the deck", SwingConstants.RIGHT);
 		
 		
 		playerHandCMB = new JComboBox();
-		playerHandCMB.add(card); //TODO
-		phHandler = new PlayerHandler();
-		playerHandCMB.addActionListener(phHandler);
-		
-		inPlayL = new JLabel("there are"+ AbstractPlayer.unfrozenSubjectCardsInPlay() + "unfrozen subject cards in play");
-		
+		playerHandCMB.add(DeckImpl.this.pickUp()); //TODO
+//		phHandler = new PlayerHandler();
+//		playerHandCMB.addActionListener(phHandler);
+//		
+//		inPlayL = new JLabel("there are"+ AbstractPlayer.unfrozenSubjectCardsInPlay() + "unfrozen subject cards in play");
+//		
 		
 		//Specify handlers and adds ActionListeners
 		
@@ -64,7 +72,7 @@ public class View extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
-	private class NumberOfOpponents extends AbstractPlayer{
+//	private class NumberOfOpponents extends AbstractPlayer.play{
 		//TODO
 		//stores name of player
 //		if(newPlayerTF != null){
@@ -87,7 +95,7 @@ public class View extends JFrame{
 //			AbstractPlayer.addOpponent().name(opponent4);
 //		}	
 //			
-	}
+//	}
 	
 	private class StartGameButtonHandler implements ActionListener{
 	public void actionPerformed(ActionEvent e){
