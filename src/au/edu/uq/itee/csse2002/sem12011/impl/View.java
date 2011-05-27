@@ -31,6 +31,7 @@ public class View extends JFrame{
 	
 	private StartGameButtonHandler sgbHandler;
 	private ExitButtonHandler ebHandler;
+<<<<<<< HEAD
 	
 	private Border EmptyBorder = BorderFactory.createEmptyBorder(5,5,5,5);
 	
@@ -55,6 +56,30 @@ public class View extends JFrame{
 		
 		
 		
+=======
+
+	public View() {
+		//player
+		playerHandL = new JLabel("Your hand contains: ", SwingConstants.CENTER);
+<<<<<<< HEAD
+		opponentPlayedL = new JLabel("Your opponent has played: " , SwingConstants.RIGHT);
+		
+		
+		playerHandCMB = new JComboBox();
+=======
+		opponentPlayedL = new JLabel("Your opponent has played: " , SwingConstants.RIGHT);		
+		// TODO deckL = new JLabel("There are" + DeckImpl.this.size() + "cards left in the deck", SwingConstants.RIGHT);
+		
+		
+		playerHandCMB = new JComboBox();
+		// TODO playerHandCMB.add(DeckImpl.this.pickUp()); //TODO
+>>>>>>> 4bd8f1519f191e37517d8e638f8ddb592b049d9e
+//		phHandler = new PlayerHandler();
+//		playerHandCMB.addActionListener(phHandler);
+//		
+//		inPlayL = new JLabel("there are"+ AbstractPlayer.unfrozenSubjectCardsInPlay() + "unfrozen subject cards in play");
+//		
+>>>>>>> bff6a1c372af6a31b1816065628564be3b66e45d
 		
 				//Opponent1
 				Container Opponent1Grid = new JPanel();
@@ -136,6 +161,7 @@ public class View extends JFrame{
 		
 	}
 	
+<<<<<<< HEAD
 	private class StartGameButtonHandler implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 	//TODO
@@ -156,6 +182,12 @@ public class View extends JFrame{
 //		}	
 //			
 			
+=======
+	
+	private class StartGameButtonHandler implements ActionListener{
+	public void actionPerformed(ActionEvent e){
+		
+>>>>>>> bff6a1c372af6a31b1816065628564be3b66e45d
 		System.load("game");
 	}
 	}
