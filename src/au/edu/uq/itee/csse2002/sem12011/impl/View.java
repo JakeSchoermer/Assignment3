@@ -36,12 +36,10 @@ public class View extends JFrame{
 	public View() {
 		//player
 		playerHandL = new JLabel("Your hand contains: ", SwingConstants.CENTER);
-		opponentPlayedL = new JLabel("Your opponent has played: " , SwingConstants.RIGHT);		
-		deckL = new JLabel("There are" + DeckImpl.this.size() + "cards left in the deck", SwingConstants.RIGHT);
+		opponentPlayedL = new JLabel("Your opponent has played: " , SwingConstants.RIGHT);
 		
 		
 		playerHandCMB = new JComboBox();
-		playerHandCMB.add(DeckImpl.this.pickUp()); //TODO
 //		phHandler = new PlayerHandler();
 //		playerHandCMB.addActionListener(phHandler);
 //		
@@ -72,30 +70,6 @@ public class View extends JFrame{
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
-//	private class NumberOfOpponents extends AbstractPlayer.play{
-		//TODO
-		//stores name of player
-//		if(newPlayerTF != null){
-//			AbstractPlayer.addOpponent().name(newPlayerTF);
-//		}
-//		//creates selected number of opponents
-//		if(oneOpponentRB.isSelected()){
-//			AbstractPlayer.addOpponent().name(opponent1);
-//		}else if (twoOpponentsRB.isSelected()){
-//			AbstractPlayer.addOpponent().name(opponent1);
-//			AbstractPlayer.addOpponent().name(opponent2);
-//		}else if(threeOpponentsRB.isSelected()){
-//			AbstractPlayer.addOpponent().name(opponent1);
-//			AbstractPlayer.addOpponent().name(opponent2);
-//			AbstractPlayer.addOpponent().name(opponent3);
-//		}else if (fourOpponentsRB.isSelected()){
-//			AbstractPlayer.addOpponent().name(opponent1);
-//			AbstractPlayer.addOpponent().name(opponent2);
-//			AbstractPlayer.addOpponent().name(opponent3);
-//			AbstractPlayer.addOpponent().name(opponent4);
-//		}	
-//			
-//	}
 	
 	private class StartGameButtonHandler implements ActionListener{
 	public void actionPerformed(ActionEvent e){
