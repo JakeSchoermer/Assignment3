@@ -38,7 +38,7 @@ public class View extends JFrame{
 		
 		Container titleGrid = new JPanel();
 		titleGrid.setBackground(Color.blue);
-		titleGrid.setBounds(0, 0, WIDTH, 50);
+		titleGrid.setSize(WIDTH, 50);
 		
 		welcomeL = new JLabel("Welcome to 'A Student's Life'", SwingConstants.CENTER);
 		welcomeL.setFont(new Font("Harrington" , Font.PLAIN, 24));
@@ -51,16 +51,19 @@ public class View extends JFrame{
 		Container PlayerGrid = new JPanel();
 		PlayerGrid.setLayout(new GridLayout(2,2));
 		PlayerGrid.setBackground(Color.RED);
-		PlayerGrid.setBounds(0, 50, WIDTH, HEIGHT-150);
+		PlayerGrid.setSize(WIDTH, HEIGHT-150);
+		
 		
 		
 		
 				//Opponent1
 				Container Opponent1Grid = new JPanel();
-				Opponent1Grid.setLayout(new FlowLayout());
+				Opponent1Grid.setLayout(new GridLayout(2,1));
 					Opponent1NameL = new JLabel("Opponent 1", SwingConstants.LEFT);
 					String[] CardNames = {"Card 1, Card 2, Card 3"};	
 					Opp1CardsinPlayList = new JList(CardNames);
+					System.out.println(Opp1CardsinPlayList.getLayout());
+					//Opp1CardsinPlayList.setLayout(mgr)
 								
 				//Opponent2
 				Opponent2NameL = new JLabel("Opponent 2", SwingConstants.LEFT);
@@ -97,7 +100,7 @@ public class View extends JFrame{
 		Container ControlPanelGrid = new JPanel();
 		ControlPanelGrid.setLayout(new FlowLayout());
 		ControlPanelGrid.setBackground(Color.GREEN);
-		ControlPanelGrid.setBounds(0, 100, WIDTH, 100);
+		ControlPanelGrid.setSize(WIDTH, 100);
 		
 		
 		ControlPanelGrid.add(startGameBtn, BorderLayout.WEST);
