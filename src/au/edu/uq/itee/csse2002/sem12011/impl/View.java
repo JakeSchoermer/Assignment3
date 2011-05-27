@@ -37,11 +37,11 @@ public class View extends JFrame{
 		//player
 		playerHandL = new JLabel("Your hand contains: ", SwingConstants.CENTER);
 		opponentPlayedL = new JLabel("Your opponent has played: " , SwingConstants.RIGHT);		
-		deckL = new JLabel("There are" + DeckImpl.this.size() + "cards left in the deck", SwingConstants.RIGHT);
+		// TODO deckL = new JLabel("There are" + DeckImpl.this.size() + "cards left in the deck", SwingConstants.RIGHT);
 		
 		
 		playerHandCMB = new JComboBox();
-		playerHandCMB.add(DeckImpl.this.pickUp()); //TODO
+		// TODO playerHandCMB.add(DeckImpl.this.pickUp()); //TODO
 //		phHandler = new PlayerHandler();
 //		playerHandCMB.addActionListener(phHandler);
 //		

@@ -6,7 +6,7 @@ public class StudentsLife {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		View gameView = new View();
+		
 	}
 
 }
